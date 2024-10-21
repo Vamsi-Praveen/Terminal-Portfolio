@@ -71,6 +71,19 @@ function skills() {
   return content.join("<br/>");
 }
 
+function education(){
+  const content = [
+    "------------------------------------------------------------------",
+    "<span class='text-lg font-bold tracking-wide mb-1'>&emsp;&emsp;&emsp;&emsp;Where i studied 📚</span>",
+    "------------------------------------------------------------------",
+    "<span class='font-bold'>B.TECH</span>&emsp;&emsp;&emsp;&emsp;&emsp;- Aditya Engineering College, Surampalem&emsp;(2021-2025)",
+    "<span class='font-bold'>Intermediate</span>&emsp;&emsp;- Narayana Junior College, Razole&emsp;(2019-2021)",
+    "<span class='font-bold'>Schooling</span>&emsp;&emsp;&emsp;&nbsp;- Sri Vani Convent and High School, Malikipuram&emsp;(upto 2019)",
+    "------------------------------------------------------------------",
+  ];
+  return content.join("<br/>");
+}
+
 function github() {
   window.open("https://github.com/Vamsi-Praveen", "_blank");
   return "Opening Github - <span class='underline underline-offset-3 text-white'>https://github.com/Vamsi-Praveen</span>";
