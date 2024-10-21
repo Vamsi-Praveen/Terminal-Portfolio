@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vamsi Praveen - Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Ubuntu Mono", monospace;
+        scroll-behavior: smooth;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+        appearance: none;
+      }
+      .animate {
+        animation: blink 1.2s linear infinite;
+      }
+      #terminal {
+        height: 100%;
+        overflow-y: auto;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 0%;
+        }
+        50% {
+          opacity: 100%;
+        }
+        100% {
+          opacity: 0%;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-black/90 h-screen w-screen py-8 px-10 text-green-300 overflow-x-hidden overflow-y-auto"
+  >
+    <div class="hidden md:block h-full w-full">
+      <h1 class="text-lg">
+        Welcome, Type
+        <span class="underline underline-offset-2 font-bold">help</span> to
+        understand the system commands! (Find the secret 🔐)
+      </h1>
+
+      <div id="terminal" class="mt-2">
+        <input
+          class="opacity-0 absolute"
+          id="commandInput"
+          type="text"
+          autofocus
+          autocomplete="off"
+          autocapitalize="off"
+        />
+        <div id="output"></div>
+        <div class="flex items-center">
+          <span id="prompt" class="text-lg"> </span>
+          <span id="currentCommand" class="ml-1 text-white text-lg"></span>
+          <span class="animate ml-1">▋</span>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden bg-red-500 text-white p-4 rounded-[4px]">
+      <h1>🔐 Sorry 😥 This site is optimized for desktop only</h1>
+    </div>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
