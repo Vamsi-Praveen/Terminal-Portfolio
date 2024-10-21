@@ -42,8 +42,13 @@ function helpMenu() {
 
 function aboutMe() {
   const content = [
-    "About Me - Vamsi Praveen",
-    "I am FullStack Developer (MERN) from India.",
+    "-------------------------------------------------------------------",
+    "<span class='text-lg font-bold tracking-wide mb-1'>&emsp;&emsp;&emsp;&emsp;About Me ✋</span>",
+    "-------------------------------------------------------------------",
+    "Hi, I am <span class='font-bold underline underline-offset-2 text-xl'>Vamsi Praveen Nakka</span> a passionate FullStack Developer(MERN) <br/>from India.",
+    "I am currently pursuing my B.TECH Final year at ADITYA UNIVERSITY.",
+    "I am self motivated person, self learner too.",
+    "-------------------------------------------------------------------",
   ];
   return content.join("<br/>");
 }
