@@ -45,32 +45,34 @@
           transform: translate(0px, 0px);
         }
         10% {
-          transform: translate(-2px, -1px); /* Slightly move left and up */
+          transform: translate(-2px, -1px);
         }
         20% {
-          transform: translate(2px, 1px); /* Slightly move right and down */
+          transform: translate(2px, 1px);
         }
         30% {
-          transform: translate(-1px, 0px); /* Slightly move left */
+          transform: translate(-1px, 0px);
         }
         40% {
-          transform: translate(1px, 0px); /* Slightly move right */
+          transform: translate(1px, 0px);
         }
         100% {
-          transform: translate(0px, 0px); /* Back to original position */
+          transform: translate(0px, 0px);
         }
       }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
+    onload="bootLoad()"
     class="bg-black/90 h-screen w-screen py-8 px-10 text-green-300 overflow-x-hidden overflow-y-auto"
   >
+    <div id="bootScreen" class="text-white"></div>
     <div
       id="systemDestroy"
       class="flex items-center justify-center flex-col text-xl"
     ></div>
-    <div class="hidden md:block h-full w-full" id="main">
+    <div class="hidden h-full w-full" id="main">
       <h1 class="text-lg">
         Welcome, Type
         <span class="underline underline-offset-2 font-bold">help</span> to

@@ -133,12 +133,56 @@ function killSystem() {
   return "";
 }
 
+function bootLoad() {
+  const bootScreen = document.getElementById("bootScreen");
+  let content = [
+    "Booting up Docker Playground OS...",
+    "Initializing terminal environment...",
+    "Loading modules... [OK]",
+    "Checking file system... [OK]",
+    "Mounting home directory... [OK]",
+    "Starting services... [OK]",
+    "Bringing up network interface... [OK]",
+    "Initializing user profile... [OK]",
+    "Welcome to the Vamsi's Portfolio OS!",
+  ];
+  let delay = 0;
+
+  content.forEach((msg, index) => {
+    setTimeout(() => {
+      bootScreen.innerHTML += `<p>${msg}</p>`;
+      if (index === content.length - 1) {
+        startPortfolio();
+      }
+    }, delay);
+    delay += 500;
+  });
+}
+
+function startPortfolio() {
+  setTimeout(() => {
+    document.getElementById("bootScreen").style.display = "none";
+    document.getElementById("main").classList.add("md:block");
+  }, 1000);
+}
+
 function resume() {
   return "Resume";
 }
 
 function projects() {
-  return "Projects";
+  let content = [
+    "-----------------------------------------------------------------------",
+    "<span class='text-lg font-bold tracking-wide mb-1'>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Projects i did 🚀</span>",
+    "-----------------------------------------------------------------------",
+    "<span class='font-bold underline underline-offset-2'>Code Carnival</span>&emsp;- Orchestrated a weekly coding event for CSE, IT,<br/> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;and AIML departments, developing a centralized<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; application for registration, contest details,<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; coordinator profiles, winners list, and<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; past questions analysis, streamlining access and<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; enhancing user experience.<br/>",
+    "<span class='font-bold underline underline-offset-2'>AI Interview System</span>&emsp;- Developed a sophisticated mock interview<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; platform utilizing the MERN stack Leveraged Gemini AI<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; to generate realistic interview questions, provide <br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;real-time feedback, and assess user performance,<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; mimicking human-like interactions.<br/>",
+    "<span class='font-bold underline underline-offset-2'>Bus Management System</span>&emsp;- We have more than 500+ buses, there may be<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;change that so of the students can use bus facility<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;without having proper authorization.We designed app<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;and admin portal for management of buses, operators,<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;no of students present per bus etc.<br/>",
+    "<span class='font-bold underline underline-offset-2'>Quiz Application (PHP)</span>&emsp;- Developed a quiz application with help of<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PHP and MYSQL. Admin can add the test, questions,<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;download reports, add users etc. Users can login and<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;take test on specific time slot they can get the score.<br/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Users are restrictred to switch the tabs for safety.<br/>",
+    "and some more....",
+    "-----------------------------------------------------------------------",
+  ];
+  return content.join("<br/>");
 }
 
 function contact() {
