@@ -96,7 +96,7 @@ function linkedin() {
 }
 
 function killSystem() {
-  let audio = new Audio("/public/sounds/alarm.mp3");
+  let audio = new Audio("../sounds/alarm.mp3");
   audio.play();
   let content = [
     "<span class='text-red-500 font-bold text-lg'>💀❌DANGER❌💀</span>",
@@ -113,7 +113,8 @@ function killSystem() {
     let width = 0;
     const interval = setInterval(() => {
       if (width >= 100) {
-        systemDestory.innerHTML = '<span class="text-red-500 font-bold text-xl text-center">❌System Failure❌<br/>You destroyed the system!!💀</span>'
+        systemDestory.innerHTML =
+          '<span class="text-red-500 font-bold text-xl text-center">❌System Failure❌<br/>You destroyed the system!!💀</span>';
         clearInterval(interval);
       } else {
         width++;
