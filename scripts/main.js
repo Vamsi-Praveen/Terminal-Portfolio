@@ -35,6 +35,7 @@ function helpMenu() {
     "<span class='underline underline-offset-2 font-bold'>color-a</span>            - To change terminal color to green",
     "<span class='underline underline-offset-2 font-bold'>color-b</span>            - To change terminal color to white",
     "<span class='underline underline-offset-2 font-bold'>color-c</span>            - To change terminal color to yellow",
+    "<span class='underline underline-offset-2 font-bold text-red-500'>rm -rf</span><span class='text-red-500'>&emsp;- It will destory the system. Don't Try it!!❌</span>",
     "------------------------------------------------------------------",
   ];
   return content.join("<br/>");
@@ -71,7 +72,7 @@ function skills() {
   return content.join("<br/>");
 }
 
-function education(){
+function education() {
   const content = [
     "------------------------------------------------------------------",
     "<span class='text-lg font-bold tracking-wide mb-1'>&emsp;&emsp;&emsp;&emsp;Where i studied 📚</span>",
@@ -92,6 +93,41 @@ function github() {
 function linkedin() {
   window.open("https://www.linkedin.com/in/vamsi-nakka", "_blank");
   return "Opening Linkedin - <span class='underline underline-offset-3 text-white'>https://www.linkedin.com/in/vamsi-nakka</span>";
+}
+
+function killSystem() {
+  let audio = new Audio("/public/sounds/alarm.mp3");
+  audio.play();
+  let content = [
+    "<span class='text-red-500 font-bold text-lg'>💀❌DANGER❌💀</span>",
+    "<span class='text-red-500'>System Failure</span>",
+    "<span class='text-red-500'>All files are deleting....</span>",
+    "<div class='w-48 h-5 mt-2 relative'>",
+    "<div class='absolute bg-red-500 h-full' id='progressBar' style={width:'0%'}></div>",
+    "</div>",
+  ];
+
+  const systemDestory = document.getElementById("systemDestroy");
+  function loadProgressBar() {
+    const progressBar = document.getElementById("progressBar");
+    let width = 0;
+    const interval = setInterval(() => {
+      if (width >= 100) {
+        systemDestory.innerHTML = '<span class="text-red-500 font-bold text-xl text-center">❌System Failure❌<br/>You destroyed the system!!💀</span>'
+        clearInterval(interval);
+      } else {
+        width++;
+        progressBar.style.width = width + "%";
+      }
+    }, 50);
+  }
+  document.getElementById("main").classList.remove("md:block");
+  document.body.classList.add("flex");
+  document.body.classList.add("items-center");
+  document.body.classList.add("justify-center");
+  systemDestory.innerHTML = content.join("");
+  loadProgressBar();
+  return "";
 }
 
 function processCommand(command) {
@@ -135,6 +171,9 @@ function processCommand(command) {
       return "Terminal color changed to yellow theme.";
     case "ls":
       outputContent = "secret.txt";
+      break;
+    case "rm -rf":
+      outputContent = killSystem();
       break;
     case "cat secret.txt":
       outputContent =
