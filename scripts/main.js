@@ -26,6 +26,7 @@ function helpMenu() {
     "<span class='underline underline-offset-2 font-bold'>projects</span>           - To know what projects Vamsi did..?",
     "<span class='underline underline-offset-2 font-bold'>certifications</span>     - To know what certifications Vamsi did..?",
     "<span class='underline underline-offset-2 font-bold'>contact</span>            - To know how to contact Vamsi..?",
+    "<span class='underline underline-offset-2 font-bold'>resume</span>            - To View the Vamsi's Resume?",
     "<span class='underline underline-offset-2 font-bold'>linkedin</span>           - To navigate to Vamsi's Linkedin Profile",
     "<span class='underline underline-offset-2 font-bold'>github</span>             - To navigate to Vamsi's Github Profile",
     "-------------------------------------------------------------------",
@@ -123,12 +124,25 @@ function killSystem() {
     }, 50);
   }
   document.getElementById("main").classList.remove("md:block");
+  document.body.classList.add("glitch");
   document.body.classList.add("flex");
   document.body.classList.add("items-center");
   document.body.classList.add("justify-center");
   systemDestory.innerHTML = content.join("");
   loadProgressBar();
   return "";
+}
+
+function resume() {
+  return "Resume";
+}
+
+function projects() {
+  return "Projects";
+}
+
+function contact() {
+  return "contact";
 }
 
 function processCommand(command) {
@@ -155,11 +169,14 @@ function processCommand(command) {
     case "github":
       outputContent = github();
       break;
-    case "project":
+    case "projects":
       outputContent = projects();
       break;
     case "education":
       outputContent = education();
+      break;
+    case "resume":
+      outputContent = resume();
       break;
     case "color-a":
       changeColors("bg-black/90", "text-green-300");
